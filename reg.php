@@ -132,15 +132,7 @@
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="#3">Blog</a>
                                 </li> -->
-                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                        <a class="nav-link" href="#three">Contact Us</a>
-                                    </li>
-                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                    </li>
-                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                        <a class="nav-link" href="signup.html">Sign up</a>
-                                    </li>
+
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                 <a class="nav-link" href="campaign-creation.html">Create Campaign</a>
                             </li> -->
@@ -165,80 +157,30 @@
     <section class="login-area section">
         <div class="container">
             <div class="main-form-area">
-                <div class="logo-area">
-                    <!-- <img src="images/logo.png" loading="lazy" alt=""/> -->
-                    <h3>Social Awarness</h3>
-                    <p>Please fill the below details to create your account</p>
-                </div>
-                <form id="myform" method="post" action="reg.php">
-                    <div class="form-group">
-                        <label> Full Name </label>
-                        <input type="name" name="name" class="form-control" placeholder="Enter your name" />
-                    </div>
-                    <div class="form-group">
-                        <label> Email Address </label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter your email address" />
-                    </div>
-                    <div class="form-group">
-                        <label> Mobile No </label>
-                        <input type="number" name="number" class="form-control" placeholder="Enter your Mobile No" />
-                    </div>
-                    <div class="form-group">
-                        <label> Password </label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password" />
-                    </div>
-                    <div class="form-group">
-                        <label> Confirm Password </label>
-                        <input type="password" class="form-control" placeholder="Enter Password" />
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Country</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="country">
-                            <option>India</option>
-                            <option>United Kingdom</option>
-                            <option>America</option>
-                            <option>Dubai</option>
-                            <option>Asia</option>
-                        </select>
-                    </div>
-                    <div class="form-wrap">
-                        <div class="custom-control custom-checkbox mr-sm-2">
-                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing" />
-                            <label class="custom-control-label" for="customControlAutosizing">I read and agree to Terms
-                                & Conditions</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="full-btn second">
-                            <input type="submit" class="btn btn-primary" value="Sign Up" />
-                        </div>
-                    </div>
-                    <div class="signup-wrap">
-                        <p>
-                            Already have an account?
-                            <a href="login.html"> Sign in here </a>
-                        </p>
-                    </div>
-                    <div class="login-separater text-center mb-5">
-                        <span>OR SIGN IN WITH</span>
-                        <hr />
-                    </div>
-                </form>
 
-                <div class="list-inline contacts-social text-center">
-                    <a href="https://www.facebook.com/"
-                        class="list-inline-item bg-facebook text-white border-0 rounded-3" data-placement="top"
-                        data-toggle="tooltip" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/" class="list-inline-item bg-twitter text-white border-0 rounded-3"
-                        data-placement="top" data-toggle="tooltip" title="Twitter" target="_blank"><i
-                            class="fab fa-twitter"></i></a>
-                    <a href="https://www.google.com/" class="list-inline-item bg-google text-white border-0 rounded-3"
-                        data-placement="top" data-toggle="tooltip" title="Google Plus" target="_blank"><i
-                            class="fab fa-google"></i></a>
-                    <a href="https://www.linkedin.com/"
-                        class="list-inline-item bg-linkedin text-white border-0 rounded-3" data-placement="top"
-                        data-toggle="tooltip" title="Linkedin-in" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+            <!-- By Simranpreet Singh  -->
+                <?php
+                include("db.php");
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $number = $_POST["number"];
+                $password = $_POST["password"];
+                $country = $_POST["country"];
+
+                $qry = "insert tbuser values('$email', '$password', '$name', '$number', '$country')  ";
+
+                $result = mysqli_query($con, $qry) or die(mysqli_error($con));
+
+                echo "Registration Successfull!";
+
+                ?>
+
+                <br><BR>
+                <a href="login.html" class="btn btn-primary">Click here to Login</a>
+
+
+
+
             </div>
         </div>
     </section>
@@ -411,41 +353,7 @@
     <script src="js/custom-main.js"></script>
 
 
-    <!-- Simranpreet Singh (Developer) -->
-    <script>
-        document
-            .getElementById("myform")
-            .addEventListener("submit", getFormValues);
 
-        function getFormValues(event) {
-            event.preventDefault();
-
-            var myform = document.getElementById("myform");
-            result = true;
-            for (i = 0; i < 5; i++) {
-                if (myform.elements[i].value == "") {
-                    alert("Please fill all the elements!");
-                     result = false;
-                           return;
-                }
-            }
-
-            if(myform.elements[3].value != myform.elements[4].value)
-            {
-                alert("Password and confirm password should match!");
-                result = false;
-            }
-            if(document.getElementById("customControlAutosizing").checked == false)
-            {
-                alert("Kindly accept the terms and conditions!");
-                result = false;
-            }
-           // alert(result);
-            if (result) {
-                this.submit();
-            }
-        }
-    </script>
 </body>
 
 </html>

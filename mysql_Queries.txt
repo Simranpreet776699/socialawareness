@@ -1,0 +1,11 @@
+create database db_socialawareness; 
+
+use db_socialawareness;
+
+create table tbuser(
+    emailid varchar(200) primary key, 
+    password varchar(100),
+    name varchar(200),
+    mobile varchar(50),
+    country varchar(50)
+);
