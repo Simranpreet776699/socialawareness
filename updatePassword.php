@@ -132,7 +132,15 @@
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="#3">Blog</a>
                                 </li> -->
-
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="#three">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="signup.html">Sign up</a>
+                                    </li>
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                 <a class="nav-link" href="campaign-creation.html">Create Campaign</a>
                             </li> -->
@@ -157,31 +165,29 @@
     <section class="login-area section">
         <div class="container">
             <div class="main-form-area">
+                <div class="logo-area">
+                    <!-- <img src="images/logo.png" loading="lazy" alt=""/> -->
+                    <h3>Social Awarness</h3>
+                    <p>Forgot Password</p>
+                </div>
 
-            <!-- By Simranpreet Singh  -->
                 <?php
                 include("db.php");
-                $name = $_POST["name"];
-                $email = $_POST["email"];
-                $number = $_POST["number"];
-                $password = $_POST["password"];
-                $country = $_POST["country"];
+                $em = $_POST["email"];
+                $pwd = $_POST["password"];
 
-                $ques = $_POST["question"];
-                $ans = $_POST["answer"];
-
-                $qry = "insert tbuser values('$email', '$password', '$name', '$number', '$country','$ques','$ans' )  ";
-
+                $qry = "update tbuser set password='$pwd' where emailid='$em' ";
                 $result = mysqli_query($con, $qry) or die(mysqli_error($con));
-
-                echo "Registration Successfull!";
-
+                    echo "Password Updated Successfully!";
                 ?>
+                    <div class="signup-wrap">
+                        <p>
 
-                <br><BR>
-                <a href="login.html" class="btn btn-primary">Click here to Login</a>
+                            <a href="login.html"> Back to Login </a>
+                        </p>
+                    </div>
 
-
+                </form>
 
 
             </div>
@@ -356,7 +362,45 @@
     <script src="js/custom-main.js"></script>
 
 
+    <!-- Simranpreet Singh (Developer) -->
+    <script>
+        document
+            .getElementById("myform")
+            .addEventListener("submit", getFormValues);
 
+        function getFormValues(event) {
+            event.preventDefault();
+
+            result = true;
+            if (document.getElementById("password").value == "") {
+                alert("Please fill the password!");
+                result = false;
+                return;
+            }
+
+            if (document.getElementById("cpassword").value == "") {
+                alert("Please fill the confirm password!");
+                result = false;
+                return;
+
+            }
+            if( document.getElementById("password").value != document.getElementById("cpassword").value )
+         {
+                alert("Password and confirm password should match");
+                 result = false;
+                    
+            }
+        
+
+
+
+
+            // alert(result);
+            if (result) {
+                this.submit();
+            }
+        }
+    </script>
 </body>
 
 </html>

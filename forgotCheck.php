@@ -132,7 +132,15 @@
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="#3">Blog</a>
                                 </li> -->
-
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="#three">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="signup.html">Sign up</a>
+                                    </li>
                                     <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                 <a class="nav-link" href="campaign-creation.html">Create Campaign</a>
                             </li> -->
@@ -157,33 +165,69 @@
     <section class="login-area section">
         <div class="container">
             <div class="main-form-area">
+                <div class="logo-area">
+                    <!-- <img src="images/logo.png" loading="lazy" alt=""/> -->
+                    <h3>Social Awarness</h3>
+                    <p>Forgot Password</p>
+                </div>
 
-            <!-- By Simranpreet Singh  -->
                 <?php
-                include("db.php");
-                $name = $_POST["name"];
-                $email = $_POST["email"];
-                $number = $_POST["number"];
-                $password = $_POST["password"];
-                $country = $_POST["country"];
+include("db.php");
+$em = $_POST["useremail"];
+$qry = "select * from tbuser where emailid='$em' ";
 
-                $ques = $_POST["question"];
-                $ans = $_POST["answer"];
+$result = mysqli_query($con, $qry) or die(mysqli_error($con));
 
-                $qry = "insert tbuser values('$email', '$password', '$name', '$number', '$country','$ques','$ans' )  ";
+$n = mysqli_num_rows($result);
+if($n > 0)
+{
+$row = mysqli_fetch_row($result);
+?>
+                <form id="myform" method="post" action="forgotCheckAnswer.php">
+                 
+                    <div class="form-group">
+                        <label> Email Address </label>
+                        <input type="email" name="email" class="form-control"
+                        value="<?php echo $em?>" readonly
+                        placeholder="Enter your email address" />
+                    </div>
+                    <div class="form-group">
+                        <label> SecurityQuestion </label>
 
-                $result = mysqli_query($con, $qry) or die(mysqli_error($con));
+                        <input type="text" name="ques" class="form-control"
+                        value="<?php echo $row[5]?>" readonly
+                        />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label> Security Answer </label>
+                        <input type="password" name="answer" id="answer" class="form-control" placeholder="Enter Security Answer" />
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="full-btn second">
+                            <input type="submit" class="btn btn-primary" value="Verify" />
+                        </div>
+                    </div>
 
-                echo "Registration Successfull!";
+                    <?php
+}
+else 
+{
+    echo "Invalid Email Id! Try Again";  
+}
 
-                ?>
+?>
+                    <div class="signup-wrap">
+                        <p>
+                           
+                            <a href="login.html"> Back to Login  </a>
+                        </p>
+                    </div>
+                   
+                </form>
 
-                <br><BR>
-                <a href="login.html" class="btn btn-primary">Click here to Login</a>
-
-
-
-
+               
             </div>
         </div>
     </section>
@@ -356,7 +400,32 @@
     <script src="js/custom-main.js"></script>
 
 
+    <!-- Simranpreet Singh (Developer) -->
+    <script>
+        document
+            .getElementById("myform")
+            .addEventListener("submit", getFormValues);
 
+        function getFormValues(event) {
+            event.preventDefault();
+
+            result = true;
+        if( document.getElementById("answer").value=="")
+         {
+                alert("Please fill the answer!");
+                 result = false;
+                       return;
+            }
+        
+
+
+
+           // alert(result);
+            if (result) {
+                this.submit();
+            }
+        }
+    </script>
 </body>
 
 </html>

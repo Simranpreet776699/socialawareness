@@ -192,6 +192,22 @@
                         <input type="password" class="form-control" placeholder="Enter Password" />
                     </div>
                     <div class="form-group">
+                        <label> Security Question </label>
+                        <select class="form-control" id="question" name="question">
+                            <option>What is your home town name?</option>
+                            <option>What is your favorite food?</option>
+                            <option>What is your favorite color?</option>
+                            <option>What is your best friend name?</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label> Security Answer </label>
+                        <input type="text" class="form-control" placeholder="Enter Security Answer" name="answer" />
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="exampleFormControlSelect1">Country</label>
                         <select class="form-control" id="exampleFormControlSelect1" name="country">
                             <option>India</option>
@@ -422,7 +438,7 @@
 
             var myform = document.getElementById("myform");
             result = true;
-            for (i = 0; i < 5; i++) {
+            for (i = 0; i < 7; i++) {
                 if (myform.elements[i].value == "") {
                     alert("Please fill all the elements!");
                      result = false;
