@@ -13,7 +13,9 @@
                 if($rows > 0)
                 {
                     session_start();
+                    $row = mysqli_fetch_row($result);
                     $_SESSION["usrid"] = $email;
+                    $_SESSION["name"] = $row[2];
                     header("location: index.html");
                 }
                 else

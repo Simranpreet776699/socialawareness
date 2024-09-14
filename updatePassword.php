@@ -72,33 +72,7 @@
                     </div>
                     <div class="col-lg-5 col-md-3">
                         <div class="top-bar-right">
-                            <ul>
-                                <li>
-                                    <a href="https://facebook.com/" class="icon-facebook" data-placement="bottom"
-                                        data-toggle="tooltip" title="Facebook" target="_blank"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://x.com/" class="icon-twitter" data-placement="bottom"
-                                        data-toggle="tooltip" title="Twitter" target="_blank"><i
-                                            class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" class="icon-instagram" data-placement="bottom"
-                                        data-toggle="tooltip" title="Instagram" target="_blank"><i
-                                            class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/" class="icon-google" data-placement="bottom"
-                                        data-toggle="tooltip" title="Youtube" target="_blank"><i
-                                            class="fab fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com" class="icon-linkedin" data-placement="bottom"
-                                        data-toggle="tooltip" title="Linkedin" target="_blank"><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                </li>
-                            </ul>
+                          
                         </div>
                     </div>
                 </div>
@@ -213,8 +187,7 @@
                     <div class="col-lg-7">
                         <div class="footer_subscribe_form">
                             <form>
-                                <input type="text" placeholder="Enter Your email address here..." />
-                                <button type="submit" class="read_btn">Subscribe</button>
+                             
                             </form>
                         </div>
                     </div>
@@ -240,39 +213,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="footer-area-inner-content">
-                        <h4>Quick Links</h4>
-                        <ul class="quick-links">
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="#one">About</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="#two"> Campaign</a>
-                            </li>
-
-                            <!-- <li>
-        <i class="fas fa-angle-double-right"></i>
-        <a href="#">Gallery</a>
-        </li> -->
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="login.html">Login</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="signup.html">Signup</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-double-right"></i>
-                                <a href="#three">Contact Us</a>
-                            </li>
-                            <li></li>
-                        </ul>
+                       
                     </div>
                 </div>
 
@@ -303,29 +244,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <h4>Get in Touch:</h4>
-                        <ul class="social-links">
-                            <li>
-                                <a href="https://www.facebook.com/" data-placement="top" data-toggle="tooltip"
-                                    title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com" data-toggle="tooltip" title="Twitter"
-                                    target="_blank"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/" data-toggle="tooltip" title="Instagram"
-                                    target="_blank"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/" data-toggle="tooltip" title="Youtube"
-                                    target="_blank"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com" data-toggle="tooltip" title="Linkedin"
-                                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                        </ul>
+                      
                     </div>
                 </div>
                 <div class="footer-bottom">

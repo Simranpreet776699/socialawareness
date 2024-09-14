@@ -61,7 +61,7 @@
                               <a class="nav-link" href="index.html">Home</a>
                           </li>
                         <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                            <a class="nav-link" href="user-dashboard.html">My Campaigns</a>
+                            <a class="nav-link" href="user-dashboard.php">My Campaigns</a>
                         </li>
                           <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                               <a class="nav-link" href="#">Settings</a>
@@ -107,47 +107,40 @@
           </div>
           <div class="col-lg-6">
             <div class="campaign-creation-form">
-              <form>
+              <form action="postcampaign.php" method="post">
                 <div class="form-group bottom-gap">
                   <label>Campaign Name</label>
-                  <input type="text" class="form-control" placeholder="Enter campaign name">
+                  <input name="cname" type="text" class="form-control" placeholder="Enter campaign name">
                   <small id="emailHelp" class="form-text text-muted">Provide a unique name for your campaign</small>
     
                 </div>
                 <div class="form-group bottom-gap">
                   <label>Description</label>
-                  <input type="text" class="form-control" placeholder="Enter campaign description">
+                  <input name="desc" type="text" class="form-control" placeholder="Enter campaign description">
                   <small id="emailHelp" class="form-text text-muted">Describe your campaign in a few sentences</small>
     
                 </div>
                 <div class="form-group bottom-gap">
                   <label>Target Amount</label>
-                  <input type="text" class="form-control" placeholder="Enter target amount">
+                  <input name="amt" type="text" class="form-control" placeholder="Enter target amount">
                   <small id="emailHelp" class="form-text text-muted">Set the fundraising goal for your campaign</small>
                 </div>
                 <div class="form-group bottom-gap">
                   <label>Duration</label>
-                  <input type="text" class="form-control" placeholder="Enter campaign duration">
+                  <input name="duration" type="text" class="form-control" placeholder="Enter campaign duration">
                   <small id="emailHelp" class="form-text text-muted">Specify the time period for your campaign</small>
                 </div>
-              </form>
+             
             </div>
             <div class="category-area">
               <h4>Category</h4>
-              <ul>
-                <li>
-                  Education
-                </li>
-                <li>
-                  Healthcare
-                </li>
-                <li>
-                  Environment
-                </li>
-                <li>
-                  Art & Culture
-                </li>
-              </ul>
+              <select name="category">
+                <option>Education</option>
+                <option>Healthcare</option>
+                <option>environment</option>
+                <option>Art&Culture</option>
+                
+              </select>
               <span>Select the category that best fits your campaign</span>
             </div>
             <div class="right-button-area">
@@ -156,11 +149,11 @@
                   <button type="button" class="btn-transparent btn-primary">Cancel</button>
                 </li>
                 <li>
-                  <button type="button" class="btn-black btn-primary">Submit</button>
+                  <input type="submit" class="btn-black btn-primary">
                 </li>
               </ul>
             </div>
-          </div>
+          </div> </form>
         </div>
       </div>
     </div>
